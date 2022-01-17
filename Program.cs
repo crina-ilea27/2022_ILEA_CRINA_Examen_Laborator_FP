@@ -1,30 +1,23 @@
 ﻿using System;
 
-namespace _65
+namespace _159
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int n, z, prod = 1, ok = 0;
-            n = int.Parse(Console.ReadLine());
-            while(n>1)
+            int n = int.Parse(Console.ReadLine());
+            string tc = Console.ReadLine();
+            string[] vec = tc.Split(' ');
+
+
+            for (int i = 0; i < n; i++)
             {
-                z = n % 10;
-                if(z%2==1)
+                Console.Write(vec[i] + ' ');
+                if (int.Parse(vec[i]) % 2 == 0)
                 {
-                    prod = prod * z;
-                    ok = 1;
+                    Console.Write(int.Parse(vec[i]) * 2 + " ");
                 }
-                n = n / 10;
-            }
-            if(ok==0)
-            {
-                Console.WriteLine(-1);
-            }
-            else
-            {
-                Console.WriteLine(prod);
             }
             Console.ReadKey();
         }
